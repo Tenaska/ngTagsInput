@@ -1,20 +1,20 @@
 {
   "author": {
-    "name": "Michael Benford",
-    "email": "michael@michaelbenford.net"
+    "name": "Fabricio Clementi",
+    "email": "fabri.clementi@gmail.com"
   },
   "name": "ng-tags-input",
   "prettyName": "ngTagsInput",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "description": "Tags input directive for AngularJS",
   "license": "MIT",
-  "homepage": "http://mbenford.github.io/ngTagsInput",
+  "homepage": "http://fclementioa.github.io/ngTagsInput",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mbenford/ngTagsInput.git"
+    "url": "https://github.com/fclementioa/ngTagsInput.git"
   },
   "bugs": {
-    "url": "https://github.com/mbenford/ngTagsInput/issues"
+    "url": "https://github.com/fclementioa/ngTagsInput/issues"
   },
   "keywords": [
     "angular",
@@ -34,14 +34,14 @@
     "dgeni": "0.4.7",
     "dgeni-packages": "0.17.1",
     "glob": "7.1.1",
-    "grunt": "1.0.1",
+    "grunt": "https://registry.npmjs.org/grunt/-/grunt-1.0.1.tgz",
     "grunt-angular-templates": "1.1.0",
     "grunt-bump": "0.8.0",
     "grunt-contrib-clean": "1.1.0",
     "grunt-contrib-compress": "1.4.1",
     "grunt-contrib-copy": "1.0.0",
     "grunt-contrib-cssmin": "2.1.0",
-    "grunt-contrib-sass": "1.0.0",
+    "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "2.3.0",
     "grunt-conventional-changelog": "6.1.0",
     "grunt-eslint": "19.0.0",
