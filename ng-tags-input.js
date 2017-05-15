@@ -749,17 +749,11 @@ function AutocompleteDirective($document, $timeout, $sce, $q, tagsInputConfig, t
         return [scope.matchClass({ $match: item, $index: index, $selected: selected }), { selected: selected }];
       };
 
-      tagsInput.on('tag-added tag-removed invalid-tag input-blur', function () {
+     tagsInput.on('tag-added tag-removed invalid-tag input-blur', function () {
         suggestionList.reset();
-      }).on('input-change', function (value) {
-        if (shouldLoadSuggestions(value)) {
-          suggestionList.load(value, tagsInput.getTags());
-        } else {
-          suggestionList.reset();
-        }
-      }).on('input-focus', function () {
-        var value = tagsInput.getCurrentTagText();
-        if (options.loadOnFocus && shouldLoadSuggestions(value)) {
+      }).on('input-change', function () {
+        var value = tagsInput.getCurrentTagText();		
+        if (value != "" && options.loadOnFocus && shouldLoadSuggestions(value)) {
           suggestionList.load(value, tagsInput.getTags());
         }
       }).on('input-keydown', function (event) {
