@@ -752,10 +752,11 @@ function AutocompleteDirective($document, $timeout, $sce, $q, tagsInputConfig, t
      tagsInput.on('tag-added tag-removed invalid-tag input-blur', function () {
         suggestionList.reset();
       }).on('input-change', function () {
-        var value = tagsInput.getCurrentTagText();		
-        if (value != "" && options.loadOnFocus && shouldLoadSuggestions(value)) {
-          suggestionList.load(value, tagsInput.getTags());
-        }
+		   var value = tagsInput.getCurrentTagText();
+		   suggestionList.reset();       		
+			if(value != "" && shouldLoadSuggestions(value)) {
+				suggestionList.load(value, tagsInput.getTags());
+		    }		
       }).on('input-keydown', function (event) {
         var key = event.keyCode;
         var handled = false;
