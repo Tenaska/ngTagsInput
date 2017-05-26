@@ -753,8 +753,9 @@ function AutocompleteDirective($document, $timeout, $sce, $q, tagsInputConfig, t
         suggestionList.reset();
       }).on('input-change', function () {
 		   var value = tagsInput.getCurrentTagText();
-		   suggestionList.reset();       		
-			if(value != "" && shouldLoadSuggestions(value)) {
+		   suggestionList.reset();     
+			var maxTags = tagsInput.getOptions().maxTags;	   
+			if(value != "" && shouldLoadSuggestions(value) && tagsInput.getTags().length < maxTags) {
 				suggestionList.load(value, tagsInput.getTags());
 		    }		
       }).on('input-keydown', function (event) {
