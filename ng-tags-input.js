@@ -753,11 +753,16 @@ function AutocompleteDirective($document, $timeout, $sce, $q, tagsInputConfig, t
         suggestionList.reset();
       }).on('input-change', function () {
 		   var value = tagsInput.getCurrentTagText();
-		   suggestionList.reset();     
-			var maxTags = tagsInput.getOptions().maxTags;	   
-			if(value != "" && shouldLoadSuggestions(value) && tagsInput.getTags().length < maxTags) {
-				suggestionList.load(value, tagsInput.getTags());
-		    }		
+		   suggestionList.reset();   
+
+			if(value != "" && shouldLoadSuggestions(value)) {				   
+				var maxTags = tagsInput.getOptions().maxTags;
+				var currentTags = tagsInput.getTags().length; 
+					
+				if(maxTags === undefined || currentTags < maxTags){
+					suggestionList.load(value, tagsInput.getTags());
+				}		
+			}
       }).on('input-keydown', function (event) {
         var key = event.keyCode;
         var handled = false;
